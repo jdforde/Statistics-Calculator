@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="contDist" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ContDistController">
+   <children>
+      <HBox prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #ededed;">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="227.0" spacing="40.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Distribution" textAlignment="CENTER" wrappingWidth="198.3291015625">
+                     <font>
+                        <Font name="Verdana" size="21.0" />
+                     </font>
+                  </Text>
+                  <RadioButton fx:id="uniform" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#uniformPressed" selected="true" text="Uniform Distribution">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="group1" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="normal" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#normalPressed" text="Normal Distribution" toggleGroup="$group1">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="exp" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#expPressed" text="Exponential Distribution" toggleGroup="$group1">
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="errorMsg" alignment="TOP_LEFT" mnemonicParsing="true" prefHeight="27.0" prefWidth="190.0" textFill="RED" visible="false" wrapText="true">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="calculate" mnemonicParsing="false" onAction="#CalcClick" text="Calculate">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <Line endY="410.0" fill="BLACK" opacity="0.7" stroke="#6b6b6b" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeWidth="3.0">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Line>
+            <VBox alignment="TOP_CENTER" prefHeight="450.0" prefWidth="246.0" spacing="15.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Input Data" textAlignment="CENTER" wrappingWidth="220.3291015625">
+                     <font>
+                        <Font name="Verdana" size="21.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="label1" strokeType="OUTSIDE" strokeWidth="0.0" text="Lower Bound:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="text1">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="label2" strokeType="OUTSIDE" strokeWidth="0.0" text="Upper Bound:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="text2">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Text fx:id="label3" strokeType="OUTSIDE" strokeWidth="0.0" text="P(X ≤ x):">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="text3" promptText="Optional">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+                  <Text fx:id="label4" strokeType="OUTSIDE" strokeWidth="0.0" text="Label4" visible="false">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="text4" visible="false">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+            </VBox>
+            <Line endY="410.0" fill="BLACK" opacity="0.7" stroke="#6b6b6b" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeWidth="3.0">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Line>
+            <VBox prefHeight="422.0" prefWidth="234.0" spacing="30.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Results" textAlignment="CENTER" wrappingWidth="188.3291015625">
+                     <font>
+                        <Font name="Verdana" size="21.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="result1" strokeType="OUTSIDE" strokeWidth="0.0" text="Mean:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="result2" strokeType="OUTSIDE" strokeWidth="0.0" text="Variance:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="result3" strokeType="OUTSIDE" strokeWidth="0.0" text="CDF:">
+                     <font>
+                        <Font name="Verdana" size="12.0" />
+                     </font>
+                  </Text>
+                  <Button mnemonicParsing="false" onAction="#ResetClick" text="Reset">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="75.0" top="100.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+               </padding>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+   </children>
+</AnchorPane>

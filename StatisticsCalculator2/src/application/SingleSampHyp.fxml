@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="singleSampInt" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SingleSampHypController">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="700.0" style="-fx-background-color: #ededed;">
+         <children>
+            <HBox prefHeight="371.0" prefWidth="700.0">
+               <children>
+                  <VBox alignment="TOP_CENTER" prefHeight="362.0" prefWidth="209.0" spacing="40.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Test" textAlignment="CENTER" wrappingWidth="198.3291015625">
+                           <font>
+                              <Font name="Verdana" size="21.0" />
+                           </font>
+                        </Text>
+                        <RadioButton fx:id="zInt" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#zTestPressed" selected="true" text="Z Test">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="group" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="tInt" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#tTestPressed" text="T Test" toggleGroup="$group">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="chiInt" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#chiTestPressed" text="Chi Squared Test" toggleGroup="$group">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </RadioButton>
+                        <RadioButton fx:id="propInt" alignment="CENTER_LEFT" mnemonicParsing="false" onAction="#propTestPressed" text="Proportion Z Test" toggleGroup="$group">
+                           <font>
+                              <Font name="Verdana" size="14.0" />
+                           </font>
+                        </RadioButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+                     </padding>
+                  </VBox>
+                  <Line endY="320.0" fill="BLACK" opacity="0.7" stroke="#6b6b6b" strokeLineCap="BUTT" strokeLineJoin="BEVEL" strokeWidth="3.0">
+                     <HBox.margin>
+                        <Insets top="20.0" />
+                     </HBox.margin>
+                  </Line>
+                  <VBox alignment="TOP_CENTER" prefHeight="355.0" prefWidth="240.0" spacing="15.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Data" textAlignment="CENTER" wrappingWidth="201.3291015625">
+                           <font>
+                              <Font name="Verdana" size="21.0" />
+                           </font>
+                        </Text>
+                        <HBox prefHeight="107.0" prefWidth="219.0">
+                           <children>
+                              <Text fx:id="label11" strokeType="OUTSIDE" strokeWidth="0.0" text="Test Type:" textAlignment="CENTER" wrappingWidth="66.673828125">
+                                 <font>
+                                    <Font name="Verdana" size="12.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                              </Text>
+                              <ChoiceBox fx:id="sideChoice" prefWidth="150.0" />
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text fx:id="label12" strokeType="OUTSIDE" strokeWidth="0.0" text="Size:">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="sizeText">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Text fx:id="label3" strokeType="OUTSIDE" strokeWidth="0.0" text="μ₀:">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="text3">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER" prefHeight="362.0" prefWidth="240.0" spacing="15.0">
+                     <children>
+                        <Text fx:id="label1" strokeType="OUTSIDE" strokeWidth="0.0" text="Population SD:">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="174.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="text1">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
+                        <Text fx:id="label2" strokeType="OUTSIDE" strokeWidth="0.0" text="Sample Mean:">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="text2">
+                           <font>
+                              <Font name="Verdana" size="12.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets bottom="30.0" left="10.0" right="10.0" top="30.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="112.0" prefWidth="700.0" spacing="40.0">
+               <children>
+                  <Text fx:id="ans" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="403.3291015625">
+                     <font>
+                        <Font name="Verdana" size="21.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="reset" mnemonicParsing="false" onAction="#ResetClick" text="Reset">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="calc" mnemonicParsing="false" onAction="#CalcClicked" text="Calculate">
+                     <font>
+                        <Font name="Verdana Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

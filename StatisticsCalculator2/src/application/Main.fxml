@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainController">
+   <children>
+      <TabPane prefHeight="500.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Basic Stats">
+               <content>
+                  <fx:include fx:id="basicStats" source="BasicStats.fxml" />
+               </content>
+          </Tab>
+          <Tab text="Discrete Dist">
+               <content>
+                  <fx:include fx:id="discreteDist" source="DiscreteDist.fxml" />
+               </content></Tab>
+            <Tab text="Continuous Dist">
+              <content>
+                <fx:include fx:id="contDist" source="ContDist.fxml" />
+              </content>
+            </Tab>
+            <Tab text="One Samp Int">
+            	<content>
+            	<fx:include fx:id="singleSampInt" source="SingleSampInt.fxml" />
+            	</content>
+            </Tab>
+            <Tab text="One Samp Hyp">
+            	<content>
+            	<fx:include fx:id="singleSampHyp" source="SingleSampHyp.fxml" />
+            	</content>
+            </Tab>
+            <Tab text="Two Samp Int">
+            	<content>
+            	<fx:include fx:id="twoSampInt" source="TwoSampInt.fxml" />
+            	</content>    	
+            </Tab>
+            <Tab text="Two Samp Hyp">
+            	<content>
+            	<fx:include fx:id="twoSampHyp" source="TwoSampHyp.fxml" />
+            	</content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

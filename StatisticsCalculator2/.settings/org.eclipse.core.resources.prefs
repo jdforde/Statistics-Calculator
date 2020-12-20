@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/controllers/ContDistController.java=UTF-8
+encoding//src/controllers/DiscreteDistController.java=UTF-8
+encoding//src/controllers/SingleSampHypController.java=UTF-8
+encoding//src/controllers/SingleSampIntController.java=UTF-8
